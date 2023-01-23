@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mission3
 {
-    class Driver
+    class Main
     {
         static void Main(string[] args)
         {
@@ -29,8 +29,8 @@ namespace Mission3
             Console.WriteLine("------------");
             Console.WriteLine(" " + board[2, 0] + " | " + board[2, 1] + " | " + board[2, 2] + " | \n");
 
-            bool GameOver = false;
-            string Player = "X";
+            bool gameOver = false;
+            string player = "X";
             int turns = 0;
             while (GameOver == false)
             {
@@ -44,13 +44,14 @@ namespace Mission3
                 if (board[row, col] == " ")
                 {
                     board[row, col] = Player;
-                    Player = "O";
+                    Player = "O"; //Need to change this, won't work when it is O's turn
+                    supporter.checkWin(board, GameOver);
                 }
                 else
                 {
-                    Console.WriteLine("That position is filled try again");
+                    Console.WriteLine("That position is filled try again"); // "That is an invalid choice. Please try again."
                 }
-                supporter.checkWin(board, GameOver);
+                
             }
 
 
