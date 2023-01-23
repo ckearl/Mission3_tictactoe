@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mission3
 {
-    class Program
+    class Driver
     {
         static void Main(string[] args)
         {
@@ -17,6 +17,8 @@ namespace Mission3
                 }
             }
 
+
+
             Console.WriteLine("Welcome to Tic-Tac-Toe!");
             Console.WriteLine("This is your board. \n The spaces are numbered columns 1-3, rows 1-3, from left to right, top to bottom.");
 
@@ -26,7 +28,28 @@ namespace Mission3
             Console.WriteLine("------------");
             Console.WriteLine(" " + board[2, 0] + " | " + board[2, 1] + " | " + board[2, 2] + " | \n");
 
-            
+            bool GameOver = false;
+            string Player = "X";
+            while (GameOver == false)
+            {
+                Console.WriteLine("Enter your row: ");
+                int row = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter your column: ");
+                int col = Convert.ToInt32(Console.ReadLine());
+
+                if (board[row, col] == " ")
+                {
+                    board[row, col] = Player;
+                    Player = "O";
+                    {
+                        Console.WriteLine("That position is filled try again");
+                    }
+                }
+            }
+
+
+
+
 
             // while ((board[0, 0] == board[0, 1] == board[0, 2]) && (board[1, 0] == board[1, 1] == board[1, 2]) && (board[2, 0] == board[2, 1] == board[2, 2]))
             /* {
