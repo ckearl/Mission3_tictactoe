@@ -10,6 +10,7 @@ namespace Mission3
     {
         static void Main(string[] args)
         {
+            var supporter = new Supporter();
             string[,] board = new string[3,3];
             for (int i = 0; i < board.Rank + 1; i++) {
                 for (int j = 0; j < board.Rank + 1; j++) {
@@ -30,8 +31,11 @@ namespace Mission3
 
             bool GameOver = false;
             string Player = "X";
+            int turns = 0;
             while (GameOver == false)
             {
+                supporter.printboard(board);
+
                 Console.WriteLine("Enter your row: ");
                 int row = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Enter your column: ");
@@ -46,6 +50,7 @@ namespace Mission3
                 {
                     Console.WriteLine("That position is filled try again");
                 }
+                supporter.checkWin(board, GameOver);
             }
 
 
