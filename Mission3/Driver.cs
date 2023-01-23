@@ -32,9 +32,9 @@ namespace Mission3
             string Player = "X";
             while (GameOver == false)
             {
-                Console.WriteLine("Enter your row: ");
+                Console.WriteLine(" Player " + Player + " Enter your row: ");
                 int row = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter your column: ");
+                Console.WriteLine(" Player " + Player + " Enter your column: ");
                 int col = Convert.ToInt32(Console.ReadLine());
 
                 if (board[row, col] == " ")
