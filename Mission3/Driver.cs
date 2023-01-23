@@ -41,9 +41,10 @@ namespace Mission3
                 {
                     board[row, col] = Player;
                     Player = "O";
-                    {
-                        Console.WriteLine("That position is filled try again");
-                    }
+                }
+                else
+                {
+                    Console.WriteLine("That position is filled try again");
                 }
             }
 
