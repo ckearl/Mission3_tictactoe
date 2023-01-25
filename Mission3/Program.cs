@@ -66,6 +66,7 @@ namespace Mission3
                     col = Convert.ToInt32(Console.ReadLine());
                     col = col - 1;
 
+                    // checks if space is already filled
                     if (board[row, col] == " ")
                     {
                         board[row, col] = player;
@@ -74,7 +75,7 @@ namespace Mission3
                     }
                     else
                     {
-                        Console.WriteLine("\nThat position is filled try again"); // "That is an invalid choice. Please try again."
+                        Console.WriteLine("\nThat position is filled try again");
                         availableSpace = false;
                     }
 
