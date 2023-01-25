@@ -8,7 +8,7 @@ namespace Mission3
 {
     public class Supporter
     {
-        static void PrintBoard(string[,] board)
+        public void printBoard(string[,] board)
         {
             Console.WriteLine("\n " + board[0, 0] + " | " + board[0, 1] + " | " + board[0, 2] + " | ");
             Console.WriteLine("------------");
@@ -17,7 +17,7 @@ namespace Mission3
             Console.WriteLine(" " + board[2, 0] + " | " + board[2, 1] + " | " + board[2, 2] + " | \n");
         }
 
-        public bool CheckWin(string[,] board, bool gameOver = false)
+        public bool checkWin(string[,] board, bool gameOver = false)
         { 
             for (int i = 0; i < board.Rank; i++)
             {
@@ -30,16 +30,12 @@ namespace Mission3
                 }
 
                 // vertical checks
-                if ((board[i, 0].Equals(board[i, 1])) && (board[i, 0].Equals(board[i, 2])))
-                {
-                    if ((board[0, i] != " ") && (board[0, i].Equals(board[1, i])) && (board[0, i].Equals(board[2, i])))
+                if ((board[0, i] != " ") && (board[0, i].Equals(board[1, i])) && (board[0, i].Equals(board[2, i])))
                     {
                         DetermineWinner(board, i, "vertical");
                         gameOver = true;
                         return gameOver;
                     }
-
-                }
 
                 // down diagonal
                 if ((board[0, 0] != " ") && (board[0, 0].Equals(board[1, 1])) && (board[0, 0].Equals(board[2, 2])))
@@ -61,8 +57,7 @@ namespace Mission3
             
         }
 
-
-        static void DetermineWinner(string[,] board, int location, string direction)
+        void DetermineWinner(string[,] board, int location, string direction)
         {
             string winner = "";
             if (direction == "horizontal")
@@ -86,6 +81,12 @@ namespace Mission3
                 Console.WriteLine("Congrations to Player " + winner + "! You won");
             }
 
+        }
+        
+        public bool tieGame(bool gameOver)
+        {
+            Console.WriteLine("The game has resulted in a tie.");
+            return gameOver = true;
         }
     }
 }
