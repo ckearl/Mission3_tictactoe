@@ -8,6 +8,7 @@ namespace Mission3
 {
     public class Supporter
     {
+        // method to print out the board
         public void printBoard(string[,] board)
         {
             Console.WriteLine("\n " + board[0, 0] + " | " + board[0, 1] + " | " + board[0, 2]);
@@ -17,6 +18,7 @@ namespace Mission3
             Console.WriteLine(" " + board[2, 0] + " | " + board[2, 1] + " | " + board[2, 2] + "\n");
         }
 
+        // method to check the board for wins
         public bool checkWin(string[,] board, bool gameOver = false)
         { 
             for (int i = 0; i < board.Rank; i++)
@@ -57,6 +59,7 @@ namespace Mission3
             
         }
 
+        // determines who the winner is
         void DetermineWinner(string[,] board, int location, string direction)
         {
             string winner = "";
@@ -83,6 +86,7 @@ namespace Mission3
 
         }
         
+        // method for printing out when the game is tied
         public bool tieGame(bool gameOver)
         {
             Console.WriteLine("The game has resulted in a tie.");
