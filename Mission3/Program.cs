@@ -43,16 +43,17 @@ namespace Mission3
                 if (turns == 10)
                 {
                     supporter.tieGame(gameOver);
+                    break;
                 }
 
                 // assign player for current turn
                 if (turns % 2 == 0)
                 {
-                    player = "X";
+                    player = "O";
                 }
                 else
                 {
-                    player = "O";
+                    player = "X";
                 }
 
                 do
@@ -74,6 +75,7 @@ namespace Mission3
                     else
                     {
                         Console.WriteLine("\nThat position is filled try again"); // "That is an invalid choice. Please try again."
+                        availableSpace = false;
                     }
 
                 } while (availableSpace == false);
